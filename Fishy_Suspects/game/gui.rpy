@@ -28,11 +28,11 @@ define config.check_conflicting_properties = True
 define gui.accent_color = '#99ccff'
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#676d9f'
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#8f9bc3'
 
 ## The color that is used for buttons and bars that are hovered.
 define gui.hover_color = '#c1e0ff'
@@ -161,7 +161,8 @@ define gui.button_tile = False
 define gui.button_text_font = gui.interface_text_font
 
 ## The size of the text used by the button.
-define gui.button_text_size = gui.interface_text_size
+## Size that influences main menu
+define gui.button_text_size = 50
 
 ## The color of button text in various states.
 define gui.button_text_idle_color = gui.idle_color
@@ -276,6 +277,7 @@ define gui.slot_spacing = 15
 
 ## The position of the main menu text.
 define gui.main_menu_text_xalign = 1.0
+
 
 
 ## Frames ######################################################################
@@ -457,7 +459,7 @@ init python:
         gui.history_height = 285
         gui.history_text_width = 1035
 
-        gui.quick_button_text_size = 30
+        gui.quick_button_text_size = 20
 
         ## File button layout.
         gui.file_slot_cols = 2

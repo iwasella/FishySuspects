@@ -289,13 +289,13 @@ style quick_button_text:
 
 screen navigation():
 
-    vbox:
+    hbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
+        #xpos gui.navigation_xpos
+        yalign 0.75
+        xalign 0.5
+        spacing 100
 
         if main_menu:
 
@@ -337,7 +337,7 @@ style navigation_button is gui_button
 style navigation_button_text is gui_button_text
 
 style navigation_button:
-    size_group "navigation"
+    #size_group "navigation"
     properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
@@ -387,7 +387,7 @@ style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+# background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0

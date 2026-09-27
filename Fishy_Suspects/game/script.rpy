@@ -2,10 +2,12 @@
 
 # Enables the text shader engine without applying any typewriter or slow-text effect
 define config.default_textshader = "typewriter"
-define s = Character("Sherlobster")
-define c = Character("Comissioner")
-define cc = Character("CCs")
-define g = Character("Gobius")
+define s = Character("Sherlobster", who_color="C10000")
+define c = Character("Comissioner", who_color="C14D00")
+define cc = Character("CCs", who_color="3E4DD2")
+define g = Character("Gobius", who_color="99B529")
+define j = Character("Jell", who_color="")
+define pf = Character("Pufferfish", who_color="BF8A11")
 
 # character transformations
 transform slide_left:
@@ -17,39 +19,30 @@ transform slide_right:
     linear 1.0 xalign 1.0
 # The game starts here.
 
+image sherlob = im.FactorScale("sherlob.png", 0.65)
+image comissioner = im.FactorScale("comissioner.png", 0.65)
+image gobius = im.FactorScale("gobius.png", 0.65)
+image jell = im.FactorScale("jell.png", 0.65)
+image ccs = im.FactorScale("ccs.png", 0.65)
+
+
+
+
 label start:
 
-    play music "/audio/Rain.wav"
+    play music "/audio/Sherlob.wav"
     scene black
-    show text "The sea is full of mysteries." at truecenter 
-    with dissolve
-    pause 2.0
-    hide text
-    with dissolve
-    show text "But for Detective Sherlobster Holmes," at truecenter 
-    with dissolve
-    pause 2.0
-    hide text
-    with dissolve
-    show text "It's just another case waiting to be solved." at truecenter 
-    with dissolve
-    pause 2.0
-    hide text
-    with dissolve
-    pause 1
+    centered "The sea is full of mysteries."
+    centered "But for Detective Sherlobster Holmes," 
+    centered "It's just another case waiting to be solved." 
 
     scene police office
     with dissolve
-    pause 1
-    show text "SHERLOBSTER HOLMES' OFFICE: SEADON POLICE DEPARTMENT 3:00PM" at truecenter 
+    centered "SHERLOBSTER HOLMES' OFFICE: SEADON POLICE DEPARTMENT 3:00PM" 
     with dissolve
-    pause 2.0
-    hide text
-    with dissolve
-    pause 2
 
     show sherlob 
-    with  dissolve
+    with dissolve
 
     """
     Sherlobster Holmes sat in desk with one hand stroking his antenna.
@@ -171,6 +164,8 @@ label trash:
     return
 
 label partystart:
+    play music "/audio/ClubMusic.mp3"
+
     """Sherlobster accepted the invitation.
     
     He has been working overtime for far too long. 
@@ -180,7 +175,7 @@ label partystart:
     Welp, since he's planning on going, then he must get ready for the party. 
     
     """
-    scene birthday
+    scene party
     with dissolve
     pause 1
     show text "GOB CORP 30TH ANNIVERSARY PARTY 6:07PM" at truecenter 
@@ -191,7 +186,7 @@ label partystart:
     pause 2
 
     show sherlob at left
-    show CCs at right
+    show ccs at right
     with dissolve
     """
     When Sherlobster arrived at the party, he was greeted by the entrance by Gob Corp's secretary, Secretary CCs.
@@ -217,8 +212,9 @@ label partystart:
     scene insideparty
     with dissolve
     pause 1
-    #he goes to the center of the screen entering from the right
-    show sherlob with moveinright
+    show jell at left
+    show gobius at right
+    with dissolve
 
     """
     Sherlobster opened the door where the party is held.
@@ -239,11 +235,9 @@ label partystart:
 
     "The argument grew louder until." 
     
-    scene insideparty
-    with hpunch
     #there's a glitch here where character temporarily stops- I'll just remove it
-    show sherlob
-    with dissolve
+    show jell at left
+    with hpunch
 
     "SLAP!"
     
@@ -253,12 +247,26 @@ label partystart:
     Silence filled the room.
 
     Lady Jell stared at the crowd before storming towards the exit.
+    """
+    hide jell with dissolve
+
+    """
 
     Sir Gobius remained where he stood, his expression hard to read.
+    """
+
+    hide gobius with dissolve
+
+    """
 
     With a slow stern gaze, SIr Gobius looked across the room, silencing the remaining whispers. 
 
     The music resumed, and the guest slowly returned to their conversations, pretending as if nothing had happened. 
+    """
+
+    show sherlob with dissolve
+
+    """
 
     Sherlobster's eyes followed Lady Jell as she disappeared through the doors. Before He can do anything, a familiar voice called out to him. 
     """
@@ -323,7 +331,7 @@ label table:
     It seems there are dishes suited for each and every one of the guest's tastes. 
     """
 
-    show CCs at right
+    show ccs at right
     """
     Confused on where to start, Bulter CCs arrives and recommended a dish of plankton. They converse about the party and their jobs. 
     """
