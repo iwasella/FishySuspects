@@ -10,7 +10,7 @@ define j = Character("Jell", who_color="")
 define pf = Character("Pufferfish", who_color="BF8A11")
 
 define audio.SherlobTheme = "/audio/Sherlob.wav"
-define audio.Pop = "/audio.Shrillypop.wav"
+define audio.popshrill = "/audio/Shrillypop.wav"
 define audio.Explore = "/audio/Explore.wav"
 define audio.Jelly = "/audio/JellyFih.wav"
 define audio.Club = "/audio/ClubMusic.mp3"
@@ -204,7 +204,7 @@ label partystart:
 
     s"Good to see you too, CCs. Hope your daughter's doing well with her health, I've heard the medicine for her treatment have gone to the testing phase. Hopefully it'll be out by the end of this year."
 
-    "CCS gave Sherlobster a strange look. It was like a half-smile almost."
+    "CCs gave Sherlobster a strange look. It was like a half-smile almost."
 
     cc"Yes, I've heard about it. My daughter's been doing well too. The doctor's been saying that she's gotten better recently."
 
@@ -229,10 +229,10 @@ label partystart:
     Being the furthest from the argument, Sherlobster could only hear the crowd's hushed whisper.
     """
 
-    "GUEST1:" "...I can't believe he'd do that..."
-    "ANOTHER GUEST:" "...in front of everyone..."
-    "GUEST:" "Poor Lady Jell.."
-    "SOMEOTHER GUEST:" "...they're both crazy..."
+    "GUEST1" "...I can't believe he'd do that..."
+    "ANOTHER GUEST" "...in front of everyone..."
+    "GUEST" "Poor Lady Jell.."
+    "SOMEOTHER GUEST" "...they're both crazy..."
 
     "The argument grew louder until." 
     
@@ -327,6 +327,7 @@ label table:
     show sherlob at left
     with dissolve
     $ tablevisited = True
+    play music Explore
 
     """
     Sherlob stomach growled as he head towards the appetizer table. 
@@ -341,6 +342,7 @@ label table:
     s"Hmm..."
 
     show ccs at right
+    with dissolve
     
     cc"Need assistance deciding, Detective?"
 
@@ -368,8 +370,33 @@ label tableinvestigation:
     menu:
         "Ask about the party." if partytalk == False:
             $ partytalk = True
+            
+            s"It must've been quite a lot of work to organize something like this, especially for the company's 30th anniversary."
+            
+            cc"""That's certainly true. The company means a lot to Sir Gobius, it's only fitting that he put the same amount of effort into celebrating its anniversary.
 
-            cc"cool"
+            Even the order of each track the orchestra plays had to be decided beforehand. Sir Gobius wanted to ensue the best atmosphere for his guests."""
+            
+            s"Sounds like he kept you busy."
+            
+            cc"He certainly does, but once you get used to it, you learn to keep up with his demands."
+            
+            s"He's always been this particular?"
+            
+            cc"{cps=120}{shader=jitter}That's one way to put it.{/shader}{/cps}{nw}" 
+            
+            "CCs paused, realizing what he had just said."
+            
+            cc"""Ah, Ahem. Sir Gobius... He's not particular, he just have high expectations for things. Even simple things.
+            
+            And as his bulter, I have to see that his wishes are carried out."""
+            
+            s"Sounds Exhausting."
+            
+            cc"""I don't mind, it's my job to make sure everything is exactly the way {i}he{/i} wants.
+            
+            {i}Sigh{/i}, forgive me, Detective. I hope I don't sound like I'm complaining. Sir Gobius is a wonder master, and I'm lucky to be serving him."""
+
             jump tableinvestigation
         "Ask about his daugther." if kidtalk == False:
             $ kidtalk = True
@@ -405,9 +432,6 @@ label tableinvestigation:
 
             cc"I promised her I'd ask Sir Gobius for a day off. Well, maybe once things settled down, I'm sure he'll be more open to offering it to me."
             jump tableinvestigation
-        "Nothing else to learn" if partytalk and kidtalk:
-            pass
-
 
     cc"Oh, would you look at the time! I've been standing idle for too long. Now, if you'll excuse me, I should make sure our other guests are being properly taken care off"
 
@@ -422,6 +446,7 @@ label tableinvestigation:
     
 label music:
     scene music
+    play music popshrill
     show sherlob at left
     with dissolve
     $ musicheard = True
