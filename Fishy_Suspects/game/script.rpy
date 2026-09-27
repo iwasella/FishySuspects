@@ -9,6 +9,12 @@ define g = Character("Gobius", who_color="99B529")
 define j = Character("Jell", who_color="")
 define pf = Character("Pufferfish", who_color="BF8A11")
 
+define audio.SherlobTheme = "/audio/Sherlob.wav"
+define audio.Pop = "/audio.Shrillypop.wav"
+define audio.Explore = "/audio/Explore.wav"
+define audio.Jelly = "/audio/JellyFih.wav"
+define audio.Club = "/audio/ClubMusic.mp3"
+
 # character transformations
 transform slide_left:
     xalign 0.5
@@ -30,7 +36,7 @@ image ccs = im.FactorScale("ccs.png", 0.65)
 
 label start:
 
-    play music "/audio/Sherlob.wav"
+    play music SherlobTheme
     scene black
     centered "The sea is full of mysteries."
     centered "But for Detective Sherlobster Holmes," 
@@ -144,6 +150,7 @@ label start:
             jump trash
 
 label trash:
+    play music Explore
     scene black
     show text "Sherlobster decided to throw the party invitation in the trash can." at truecenter 
     with dissolve
@@ -164,7 +171,7 @@ label trash:
     return
 
 label partystart:
-    play music "/audio/ClubMusic.mp3"
+    play music Club volume 0.75
 
     """Sherlobster accepted the invitation.
     
@@ -177,13 +184,9 @@ label partystart:
     """
     scene party
     with dissolve
-    pause 1
-    show text "GOB CORP 30TH ANNIVERSARY PARTY 6:07PM" at truecenter 
+    centered "GOB CORP 30TH ANNIVERSARY PARTY 6:07PM" 
     with dissolve
-    pause 2.0
-    hide text
-    with dissolve
-    pause 2
+    
 
     show sherlob at left
     show ccs at right
@@ -210,8 +213,6 @@ label partystart:
     """After a brief exchange, Sherlob thanked CCs and made his way towards the main hall."""
     
     scene insideparty
-    with dissolve
-    pause 1
     show jell at left
     show gobius at right
     with dissolve
@@ -237,6 +238,8 @@ label partystart:
     
     #there's a glitch here where character temporarily stops- I'll just remove it
     show jell at left
+    play music Jelly
+    play audio "/audio/slap.mp3"
     with hpunch
 
     "SLAP!"
@@ -317,6 +320,8 @@ label partystart:
 default tablevisited = False
 default musicheard = False
 
+
+
 label table:
     scene table
     show sherlob at left
@@ -329,12 +334,85 @@ label table:
     He marveled at the assortment of entrees and appetizers available. 
         
     It seems there are dishes suited for each and every one of the guest's tastes. 
+
+    Sherlobster's eye darted from dish to dish.
     """
 
+    s"Hmm..."
+
     show ccs at right
-    """
-    Confused on where to start, Bulter CCs arrives and recommended a dish of plankton. They converse about the party and their jobs. 
-    """
+    
+    cc"Need assistance deciding, Detective?"
+
+    s"Oh, I almost didn't see you there CCs. Well, there's so many choices that I don't know how to start."
+
+    cc "Then might i recommend the plankton? It's one of Sir Gobius' favorites."
+
+    s "Plankton, huh? Can't say I've had it prepared quite like this before."
+
+    cc"Yes, the chef has quite a particular way of preparing it. I'm sure you'll enjoy it."
+
+    "Sherlobster helped himself to a small serving of the recommended dish. It was indeed delicious."
+
+    s"This is delicious! I've never tasted plankton like this, please, convey my apprication to the chef, if you will, CCs."
+
+    cc"Of course, Detective."
+    jump tableinvestigation
+
+
+
+default partytalk = False
+default kidtalk = False
+
+label tableinvestigation:
+    menu:
+        "Ask about the party." if partytalk == False:
+            $ partytalk = True
+
+            cc"cool"
+            jump tableinvestigation
+        "Ask about his daugther." if kidtalk == False:
+            $ kidtalk = True
+            s" I know we spoke briefly earlier, but how's your daughter, CCs?"
+            
+            "CCs' expression softened at the thought of his daughter, his eyes looked a little sad." 
+            
+            cc"She's doing great, and her health's getting better. I just wish I had more time to spend with her."
+
+            s"I see, I'm sure Sir Gobius wouldn't mind giving you a day off. You've been by his side for nearly ten years!"
+
+            cc"""Haha, yes I have. But the company's been keep Sir Gobius busy, there's simply no time for a day off.
+
+            Whenever I think I've finsihed one task, there's always another waiting for me.
+            
+            """
+            
+            s"After ten years, you'd think he'd give you a little breathing room."
+
+            cc"{cps=120}{shader=jitter}You'd think so, wouldn't you?{/shader}{/cps}{nw}"
+
+            "CCs quickly cleared his throat and straighten himself."
+
+            c" But that's simply how Sir Gobius is. He expects everthing to be done his way, and I... I suppose I've gotten used to it."
+
+            s"Still, your daughter probably wishes she could see you more."
+
+            "CCs eye's look downcast."
+
+            cc"She probably did."
+
+            s"{i}Did?{/i}"
+
+            cc"I promised her I'd ask Sir Gobius for a day off. Well, maybe once things settled down, I'm sure he'll be more open to offering it to me."
+            jump tableinvestigation
+        "Nothing else to learn" if partytalk and kidtalk:
+            pass
+
+
+    cc"Oh, would you look at the time! I've been standing idle for too long. Now, if you'll excuse me, I should make sure our other guests are being properly taken care off"
+
+    s" Of course."
+
 
     menu:
         "Head toward the music." if musicheard == False:
