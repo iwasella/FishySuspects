@@ -43,7 +43,7 @@ init python:
         ## be translatable.
         name=_("Sherlobster Theme"),
         ## This should be the path to the song i.e. "audio/music/sugar_plum.ogg"
-        path="/audio/Sherlob.wav",
+        path="audio/Sherlob.wav",
         ## The song artist. Optional; depends on how you want to set up
         ## your screens. The default layouts use the artist field.
         #artist="Pyotr Ilyich Tchaikovsky",
@@ -56,7 +56,9 @@ init python:
         ## An optional extra field. You can put whatever information you like
         ## in here and display it however you want in the music room screen.
         ## By default, the screens do not display this information.
+
         #description=_("From {i}The Nutcracker{/i}"),
+
         ## You may optionally provide an unlock condition as a string, which
         ## will be evaluated to determine if the song is unlocked or not.
         ## In this case, the song is unlocked when the persistent variable
@@ -64,13 +66,14 @@ init python:
         ## By default, songs are unlocked when the player has listened to them
         ## in-game. You can also set this to "True" to have a song be always
         ## unlocked.
-        unlock_condition="persistent.watched_intro",
+        unlock_condition="True",
     )
 
     music_room.add(
         name=_("Club Music"),
         #artist="Red Robotix",
-        path="/audio/ClubMusic.mp3"
+        path="audio/ClubMusic.mp3",
+        unlock_condition="True",
         ## The other information is omitted here, so it gets the defaults.
         ## That is, it gets the default cover art, no description, and it is
         ## unlocked when it is listened to in-game.
@@ -78,38 +81,46 @@ init python:
 
     music_room.add(
         name=_("Jelly Fih"),
-        path="/audio/JellyFih.wav"
+        path="audio/JellyFih.wav",
+        unlock_condition="True",
 
     )
 
     music_room.add(
         name=_("Main Menu Theme"),
-        path="/audio/MainMenuTheme.wav"
+        path="audio/MainMenuTheme.wav",
+        unlock_condition="True",
+    
     )
 
     music_room.add(
         name=_("Shrilly lil Pop"),
-        path="/audio/ShrillyPop.wav"
+        path="audio/ShrillyPop.wav",
+        unlock_condition="True",
     )
 
     music_room.add(
         name=_("The Exploring Fih"),
-        path="/audio/Explore.wav",
+        path="audio/Explore.wav",
+        unlock_condition="True",
     )
 
     music_room.add(
         name=_("Jolly Fih"),
-        path="/audio/JollyFih.wav",
+        path="audio/JollyFih.wav",
+        unlock_condition="True",
     )
 
     music_room.add(
         name=_("Gill-ty"),
-        path="/audio/Gill-ty.wav",
+        path="audio/Gill-ty.wav",
+        unlock_condition="True",
     )
 
     music_room.add(
         name=_("Gobbers"),
-        path="/audio/Gobbers.wav",
+        path="audio/Gobbers.wav",
+        unlock_condition="True",
     )
 
 
@@ -120,7 +131,7 @@ init python:
 ## development. Set it to False to test the unlock conditions. Tracks will
 ## automatically obey unlock rules in a distribution regardless of the value
 ## of this configuration variable.
-define myconfig.UNLOCK_TRACKS_FOR_DEVELOPMENT = True
+#define myconfig.UNLOCK_TRACKS_FOR_DEVELOPMENT = False
 
 ################################################################################
 ## IMAGES & DEFINITIONS

@@ -117,6 +117,12 @@ image thumb_16 = Transform("C8", size=(384, 216))
 image C9 = Transform("images/dead.png", size=(1920, 1080), fit="contain")
 image thumb_17 = Transform("C9", size=(384, 216))
 
+label splashscreen:
+
+    $ renpy.movie_cutscene('images/IMG_4846.webm')
+
+    return
+
 label start:
 
     play music SherlobTheme
