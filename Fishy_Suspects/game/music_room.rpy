@@ -34,7 +34,7 @@ init python:
     ## This sets up a default art image for all tracks in this room which aren't
     ## given a more specific one. This default art is 600x600, but several
     ## layouts resize it. It should typically be square.
-    music_room.default_art = "gui/music_room/cover_art.webp"
+    music_room.default_art = "gui/music_room/cover_art.png"
 
     ## Now you can declare the music files. These will appear in the music room
     ## in the order you declare them in, unless you set alphabetical=True above.
@@ -129,10 +129,10 @@ define myconfig.UNLOCK_TRACKS_FOR_DEVELOPMENT = True
 ## to colorize the default music controls. You can change these if you want to
 ## use the provided images, or simply supply your own and remove the lines
 ## `at colorize_button` from the screen below.
-define MUSIC_ROOM_IDLE_COLOR = "#baa7f9"
-define MUSIC_ROOM_HOVER_COLOR = "#875bc1"
+define MUSIC_ROOM_IDLE_COLOR = "#b1aebc"
+define MUSIC_ROOM_HOVER_COLOR = "#726187"
 define MUSIC_ROOM_SELECTED_IDLE_COLOR = "#a776c5"
-define MUSIC_ROOM_SELECTED_HOVER_COLOR = "#a15ad3"
+define MUSIC_ROOM_SELECTED_HOVER_COLOR = "#8b759b"
 define MUSIC_ROOM_INSENSITIVE_COLOR = "#87799c"
 
 ## Here are the default buttons used for the music controls below. You can
@@ -215,7 +215,7 @@ style mr_layout_frame:
 style mr_layout_button:
     background None
 style mr_layout_button_text:
-    hover_color "#a556d6" selected_color "#c635ff"
+    hover_color "#aa81c3" selected_color "#a185ac"
     idle_color "#f7f7ed" insensitive_color "#666"
 
 ################################################################################
@@ -242,11 +242,11 @@ screen music_room(mr):
 
     style_prefix "music_room"
 
-    add "#332645" ## The background image
+    add "#040404" ## The background image
 
     ## To return to the main menu
     textbutton _("Return") action Return() align (0.0, 1.0) text_size 40:
-        left_margin 25 bottom_margin 25
+        left_margin 25 bottom_margin 25 
 
     ## Buttons to go to the different layouts. Remove once you've decided
     ## on which layout to use.
@@ -260,7 +260,8 @@ screen music_room(mr):
         style_prefix 'track_list'
         xsize 850 left_margin 25 top_margin 25
         viewport:
-            mousewheel True scrollbars "vertical" draggable True
+            #remove mousewheel
+            #mousewheel True scrollbars "vertical" draggable True
             has vbox
             label _("Track List") style "music_room_title"
             ## get_tracklist takes one argument, all_tracks. If all_tracks is
@@ -294,7 +295,7 @@ screen music_room(mr):
     ## so you can click it to seek in the song.
     frame:
         right_margin 45 background None
-        xalign 1.0 yalign 0.0
+        xalign 1.0 yalign 0.3
         has vbox
         if current_track:
             add current_track.art xalign 0.5 ysize 440 fit "contain"
@@ -381,7 +382,7 @@ screen music_room(mr):
 style music_room_vbox:
     ycenter 0.5 spacing 25
 style music_room_frame:
-    background "#4a3f62"
+    background "#2c2736"
     yalign 0.5 xalign 0.0
     left_margin 25 padding (25, 25)
 style music_room_text:
@@ -399,7 +400,7 @@ style music_room_image_button:
 style music_room_bar:
     xsize 700 xalign 0.5 ysize 38
     right_bar "#21212d"
-    left_bar "#964dc6"
+    left_bar "#9571ad"
 style music_room_pos:
     color "#fff" xalign 0.5 adjust_spacing False
 style music_room_duration:
@@ -409,7 +410,7 @@ style music_room_duration:
 ## Styles for the track list, shared generally by the other rooms.
 ################################################################################
 style track_list_frame:
-    background "#251637"
+    background "#000000"
     yalign 0.0 xalign 0.0
     padding (25, 25)
 style track_list_viewport:
@@ -433,8 +434,8 @@ style track_list_text:
 style track_list_label:
     background None padding (2, 0)
 style track_list_label_text:
-    color "#f7f7ed" hover_color "#734bb3" selected_color "#7235ff"
+    color "#f7f7ed" hover_color "#734bb3" selected_color "#8875b3"
     insensitive_color "#666"
 style track_list_vscrollbar:
-    thumb "#783fb0" base_bar "#292835"
+    thumb "#72598b" base_bar "#292835"
 
