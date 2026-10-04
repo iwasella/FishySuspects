@@ -24,3 +24,13 @@
 /dialogue.tab
 /dialogue.txt
 /strings.json
+
+# Save files and persistent data
+/game/saves/
+/game/cache/
+
+# Operating system / IDE files
+.DS_Store
+Thumbs.db
+.vscode/
+

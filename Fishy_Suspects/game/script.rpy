@@ -30,6 +30,7 @@ image comissioner = im.FactorScale("comissioner.png", 0.65)
 image gobius = im.FactorScale("gobius.png", 0.65)
 image jell = im.FactorScale("jell.png", 0.65)
 image ccs = im.FactorScale("ccs.png", 0.65)
+image pf = im.FactorScale("pufferfish.png", 0.65,)
 
 
 
@@ -42,7 +43,7 @@ label start:
     centered "But for Detective Sherlobster Holmes," 
     centered "It's just another case waiting to be solved." 
 
-    scene police office
+    scene theoffice
     with dissolve
     centered "SHERLOBSTER HOLMES' OFFICE: SEADON POLICE DEPARTMENT 3:00PM" 
     with dissolve
@@ -51,7 +52,7 @@ label start:
     with dissolve
 
     """
-    Sherlobster Holmes sat in desk with one hand stroking his antenna.
+    Sherlobster Holmes sat in desk with one claw stroking his antenna.
     
     He's surrounded by stacks of papers and photographs. 
     
@@ -59,7 +60,7 @@ label start:
 
     He's been up all night connecting dots, piecing evidence together, and analyzing witness testimoies. 
 
-    His hand left his antenna and began tapping against his desk.
+    His claw left his antenna and began tapping against his desk.
 
     {i}Tap. Tap. Tap. Tap. Tap.{/i}
 
@@ -182,11 +183,9 @@ label partystart:
     Welp, since he's planning on going, then he must get ready for the party. 
     
     """
-    scene party
+    scene partystart
     with dissolve
-    centered "GOB CORP 30TH ANNIVERSARY PARTY 6:07PM" 
-    with dissolve
-    
+    pause
 
     show sherlob at left
     show ccs at right
@@ -212,7 +211,7 @@ label partystart:
 
     """After a brief exchange, Sherlob thanked CCs and made his way towards the main hall."""
     
-    scene insideparty
+    scene insidetheparty
     show jell at left
     show gobius at right
     with dissolve
@@ -245,7 +244,7 @@ label partystart:
     "SLAP!"
     
     """
-    Lady Jell struck Sir Gobius across the face with with her gloved hand. 
+    Lady Jell struck Sir Gobius across the face with with her gloved tentacle. 
 
     Silence filled the room.
 
@@ -383,7 +382,7 @@ label tableinvestigation:
             
             s"He's always been this particular?"
             
-            cc"{cps=120}{shader=jitter}That's one way to put it.{/shader}{/cps}{nw}" 
+            cc"{cps=100}{shader=jitter}That's one way to put it.{/shader}{/cps}{nw}" 
             
             "CCs paused, realizing what he had just said."
             
@@ -416,7 +415,7 @@ label tableinvestigation:
             
             s"After ten years, you'd think he'd give you a little breathing room."
 
-            cc"{cps=120}{shader=jitter}You'd think so, wouldn't you?{/shader}{/cps}{nw}"
+            cc"{cps=100}{shader=jitter}You'd think so, wouldn't you?{/shader}{/cps}{nw}"
 
             "CCs quickly cleared his throat and straighten himself."
 
@@ -445,14 +444,140 @@ label tableinvestigation:
             jump hallway
     
 label music:
-    scene music
+    scene orchestra
     play music popshrill
     show sherlob at left
     with dissolve
     $ musicheard = True
 
-    "There's an orchestra playing in the corner."
-        
+    """
+    Sherlobster wandered deeper into the ballroom, where the sound of the orchestra could be appriecated best.
+
+    Guest danced and chatted along the music, accompanied by the sound of clinking glasses from those who drunk a little too much to be dancing. 
+
+    Turning around to leave the busy scene, Sherlobster bumped into another guest. He stumbled backward, almost falling, before a large fin caught him and held him steady.
+    """
+    play audio "/audio/rizz.mp3"
+
+
+    show pf at right
+    with dissolve
+
+    s"Ah, pardon me! I wasn't looking where I was turning."
+
+    pf"Ha! No harm done, good sir."
+
+    "Standing in front of Sherlobster was a rather large pufferfish with a wide grin across his face. He helped Sherlobster regain his balance before giving him a friendly pat on the shoulder."
+
+    pf"You alright there?"
+
+    s"Yes, I- ahem, I'm fine. Thank you."
+
+    pf"Good! Wouldn't want you falling over and ruining that nice suit of yours!"
+
+    "Duke Pufferish lets out a hearty laugh."
+
+    "Sherlobster couldn't help but smile."
+
+    s"{i}He seems like a fun guy to be around.{/i}"
+
+    s"I don't believe we've met before."
+
+    "Sherlobster extends a claw as greeting."
+
+    s"Sherlobster Holmes"
+
+    "Duke Pufferish took his claw and gave it a firm shake."
+
+    pf"A pleasure to finally meet you! I'm Duke Pufferish. Sir Gobius has spoken highly of you, Detective!"
+
+    s"Oh, did he now?"
+
+    pf"Yes, of course. Every time we meet, he always bring you up and talk about the news clippings you were on! He praises every case you solve like a fanboy!"
+
+    s"It sounds like you two know each other quite well."
+
+    pf"Oh, absolutely! Sir Gobius and I have been business partners for years."
+
+    jump musicinvestigation
+
+
+default selftalk = False
+default relation = False
+
+
+label musicinvestigation:
+    menu:
+        "Ask about himself" if selftalk ==False:
+            $ selftalk = True
+            s"So, what kind of business do you own? Just out of curiosity."
+            
+            pf"Oh, I have my fins in a little bit of everything! My family has been in the trading business for generations. We import and export all sorts of goods from different parts of the sea."
+
+            "Duke Pufferish gave a proud grin."
+
+            pf" My grandfather started it when he first arrived at Seadon, he was the one who built the company from the ground up, then my father expanded it, and now I've taken over."
+
+            "Duke Pufferish's face fell slightly."
+
+            pf"We're quite a large company, but not as large as Gob Corp, of course."
+
+            "Duke Pufferish gave a small laugh and scrached the side of his head with a fin."
+
+            pf" When Gobius first started expanding Gob Corp, he came to me and offered a deal... Well, I couldn't turn it down after that! So, I helped him out with shipping routes and connections."
+
+            s" I see."
+
+            pf"He was able to grow his company exponentially and eventually Gob Corp grew bigger and bigger and even surpasssed my family's business."
+
+            "Duke pufferish's smiled faded and muttered something under his breath"
+
+            pf"{cps=100}{shader=jitter}..If only he didnt hold that against me.{/shader}{/cps}{nw}"
+
+            s" What did you say?"
+
+            "Duke Pufferish stuttered."
+
+            pf"Ah- nothing! Nothing at all!"
+
+            "He coughed to cover up his stutter."
+
+            pf"Im just so glad I was able to contribute to Gob Corp's success, this company is certainly something extraordinary, just like it's owner."
+
+            s"How one man managed to achieve that much success... He must have some sort of secret talent for business."
+
+            pf"Ha.. maybe, but Gobius has always been good at keeping his cards close to his chest"
+            jump musicinvestigation
+        "Ask about his relationship with Sir Gobius." if relation ==False:
+            $ relation = True
+            jump musicinvestigation
+
+            "Duke Pufferish puffed his chest out proudly."
+
+            pf"We've been through quite a lot together. The good and bad moments."
+
+            s"Business partners, huh. I take it you guys must be close after all these years working together? Reminds me of my colleague and I."
+
+            "Duke Pufferish's grin remained, though it seems to twitch for a second."
+
+            pf"I'd say so! Gobius and I have a long {i}history{/i} together. He's... certainly a memorable fish."
+
+            "Sherlobster raised a brow at 'memorable'."
+
+            pf"Ha! You know what I mean. The main certainly knows how to get what he wants."
+
+            "Duke Pufferish laughed and gave Sherlobster another friendly pat on the shoulder."
+
+            pf"But that's what make him such a sucessful businessfish, his desire for perfection certainly brought him to the top of the food chain!"
+
+            jump musicinvestigation
+
+    
+    s"Well, I wont bother you any longer, Duke Pufferish."
+
+    pf"Oh no, you did not bother me at all Detective, not at all."
+
+
     menu:
         "Head toward the table." if tablevisited == False:
             jump table
@@ -462,9 +587,105 @@ label music:
 
 label hallway:
     scene hallway
-    "we in the halllwayyy"
+    show sherlob at left
+    with dissolve 
 
+    "Sherlobster stepped out the ballroom and into the quiet corridor. Once the door closes behind him, he pressed his back against the wall. Muffled music and chatter can still be heard but muted enough to give him brain a break."
 
+    s"Rich arostrocrate parties are definitely not my thing."
+
+    "He took a slow, dragging breath and closed his eyes to for a break. Before Sherlobster can even open his eyes, he heard voices coming from around the corner, farther down the corridor."
+
+    "???": "After everything I've had to put up with, you'd think he'd at least have the decency to be discreet."
+
+    "Another voice responded, though Sherlobster couldn't quite make out the words."
+
+    "???": "I never wanted any of this. You know that."
+
+    "Sherlobster recognized her voice."
+
+    show ladyjell at right
+    with dissolve
+
+    j"My family thought it was a wonderful arrangement. Sigh... Of course they did. Whatever connections he had, whatever {i}influence{/i}..."
+
+    "Lady Jell scoffed."
+
+    j"clearly there's no way this man had any influence other than the dirt he found while digging around where he shouldnt."
+
+    "A pause, it seems the other person responded."
+
+    j"clearly, it was all a ruse to claim my family's fortune for his own. Everything..."
+
+    "Lady jell laughed."
+
+    j"...Being his wife doesn't mean I have to pretend I don't know what he does when I'm not around. He thinks he's clever, but he's just hiding behind my family's crest!"
+
+    "Her breathing was clearly louder and she was clearly on the verge of tears."
+
+    j" Now everyone knows, and he has put shame on me, this family, UGH! How can I show myself in public now..."
+
+    "Silence once more as the respondant replies. then lady jell's reponded with a lowered tone."
+
+    j" If he plans on doing just that, then I'll find a way to stop this nonsense. My family's honor will not fall due to his hands."
+
+    hide sherlob
+    hide ladyjell
+    with dissolve
+    "Sherlobster heard footsteps approaching from the other end of the hallwasy. He stepped behind a pillar before Lady Jell could see him."
+
+    "Her footsteps faded, but Sherlobster remained where he was for a moment. It seems Lady Jell was talking to someone over the phone."
+
+    "It's best to return to the banquent hall before anyone noticed him being gone for too long."
+
+    "Sherlobster made his way back into the banquet hall."
+
+    "The crowd had thinned since he had left for some air. Some guest had already said their goodbyes, while others still lingered around the tables, finsihing their drinks and conversations."
+
+    "Sherlobster loooked around until he spotted Sir Gobius standing neawr the drinks table. He seems to have freshen himself up."
+
+    "They locked eyes and Gobius walked up to him holding two drinks."
+
+GOBIUS: "Ah, Detective, there you are! I couldn't find you anywhere."
+
+Gobius stumbled towards Sherlobster, clearly drunk, and offered a wine glass towards him.
+
+GOBIUS: "Care for a drink, my friend?"
+
+SHERLOBSTER: "I suppose another one won't hurt."
+
+Sherlobster accepted the wine.
+
+GOBIUS:" I hope you've been enjoying yourself tonight."
+
+SHERLOBSTER:" I have, It's certainly been an interesting evening."
+
+GOBIUS:"Interesting, ey? I hope that's a good thing"
+
+Gobius chuckled.
+
+The two begin to talk, but the celebration seem to be ending, and guest begin to bid their dues.
+
+GUEST: "Goodnight, Sir Gobius."
+ANOTHERGUEST: "Happy anniversary, thank you for having us."
+
+GOBIUS: "ah, thank you for attending, CCs will see you out."
+
+SHERLOBSTER: "Well, I suppose I should be heading out as well. Thank you for having me tonight."
+
+Sherlobster bowed his head goodbye, but gobius seem to have something to say.
+
+GOBIUS:" Wait! The wine, I've forgotten about the wine!"
+
+SHERLOBSTER: "The wine?"
+
+GOBIUS: "Yes! The red wine we spoked about, it'd be a shame to not serve it to you after all this time. I have even troubled CCs to getting that wine just for this occasion."
+
+SHERLOBSTER: "I'm afraid I must decline, it's far too late, and I must head back to the office."
+
+GOBIUS: "ah... I... I understand. You're busy with your cases."
+
+Gobius seems down, it seems he was looking foward to sharing another drink with the detective. 
 
 
 

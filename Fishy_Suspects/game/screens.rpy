@@ -301,8 +301,11 @@ screen navigation():
 
             textbutton _("Start") action Start()
 
-        else:
+            textbutton "Music Room" action ShowMenu("music_room")
 
+
+        else:
+            
             textbutton _("History") action ShowMenu("history")
 
             textbutton _("Save") action ShowMenu("save")
@@ -1138,6 +1141,47 @@ style help_label_text:
 ## Additional screens
 ################################################################################
 
+### MUSIC SCENE
+init python:
+
+    # Step 1. Create a MusicRoom instance.
+    mr = MusicRoom(fadeout=1.0)
+
+    # Step 2. Add music files.
+    mr.add("/audio/ClubMusic.mp3", always_unlocked=True)
+    mr.add("/audio/Explore.wav", always_unlocked=True)
+    mr.add("/audio/ShrillyPop.wav", always_unlocked=True)
+
+
+# Step 3. Create the music room screen.
+screen music_room:
+
+    tag menu
+
+    frame:
+        has vbox
+
+        # The buttons that play each track.
+        textbutton "Track 1" action mr.Play("/audio/ClubMusic.mp3")
+        textbutton "Track 2" action mr.Play("/audio/Explore.wav")
+        textbutton "Track 3" action mr.Play("/audio/ShrillyPop.wav")
+
+        null height 40
+
+        # Buttons that let us advance tracks.
+        textbutton "Next" action mr.Next()
+        textbutton "Previous" action mr.Previous()
+
+        null height 40
+
+        # The button that lets the user exit the music room.
+        textbutton "Main Menu" action ShowMenu("main_menu")
+
+    # Start the music playing on entry to the music room.
+    on "replace" action mr.Play()
+
+    # Restore the main menu music upon leaving.
+    on "replaced" action Play("music", "/audio/MainMenuTheme.wav")
 
 ## Confirm screen ##############################################################
 ##
