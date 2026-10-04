@@ -6,7 +6,7 @@ define s = Character("Sherlobster", who_color="C10000")
 define c = Character("Comissioner", who_color="C14D00")
 define cc = Character("CCs", who_color="3E4DD2")
 define g = Character("Gobius", who_color="99B529")
-define j = Character("Jell", who_color="")
+define j = Character("Jell", who_color="#a96dfc")
 define pf = Character("Pufferfish", who_color="BF8A11")
 
 define audio.SherlobTheme = "/audio/Sherlob.wav"
@@ -41,6 +41,7 @@ label start:
     scene black
     centered "The sea is full of mysteries."
     centered "But for Detective Sherlobster Holmes," 
+
     centered "It's just another case waiting to be solved." 
 
     scene theoffice
@@ -228,9 +229,9 @@ label partystart:
     Being the furthest from the argument, Sherlobster could only hear the crowd's hushed whisper.
     """
 
-    "GUEST1" "...I can't believe he'd do that..."
+    "SOME GUEST" "...I can't believe he'd do that..."
     "ANOTHER GUEST" "...in front of everyone..."
-    "GUEST" "Poor Lady Jell.."
+    "ANOTHER OTHER GUEST " "Poor Lady Jell.."
     "SOMEOTHER GUEST" "...they're both crazy..."
 
     "The argument grew louder until." 
@@ -550,7 +551,6 @@ label musicinvestigation:
             jump musicinvestigation
         "Ask about his relationship with Sir Gobius." if relation ==False:
             $ relation = True
-            jump musicinvestigation
 
             "Duke Pufferish puffed his chest out proudly."
 
@@ -585,8 +585,11 @@ label musicinvestigation:
             jump hallway
 
 
+
 label hallway:
+    play music SherlobTheme
     scene hallway
+    pause
     show sherlob at left
     with dissolve 
 
@@ -596,28 +599,28 @@ label hallway:
 
     "He took a slow, dragging breath and closed his eyes to for a break. Before Sherlobster can even open his eyes, he heard voices coming from around the corner, farther down the corridor."
 
-    "???": "After everything I've had to put up with, you'd think he'd at least have the decency to be discreet."
+    "???" "After everything I've had to put up with, you'd think he'd at least have the decency to be discreet."
 
     "Another voice responded, though Sherlobster couldn't quite make out the words."
 
-    "???": "I never wanted any of this. You know that."
+    "???" "I never wanted any of this. You know that."
 
     "Sherlobster recognized her voice."
 
-    show ladyjell at right
+    show jell at right
     with dissolve
 
-    j"My family thought it was a wonderful arrangement. Sigh... Of course they did. Whatever connections he had, whatever {i}influence{/i}..."
+    j"My family thought it was a wonderful arrangement. Sigh... Of course they did. Whatever connections he had, whatever {i}influence...{/i}"
 
     "Lady Jell scoffed."
 
-    j"clearly there's no way this man had any influence other than the dirt he found while digging around where he shouldnt."
+    j"Clearly there's no way this man had any influence other than the dirt he found while digging around where he shouldnt."
 
     "A pause, it seems the other person responded."
 
-    j"clearly, it was all a ruse to claim my family's fortune for his own. Everything..."
+    j"Clearly, it was all a ruse to claim my family's fortune for his own. Everything..."
 
-    "Lady jell laughed."
+    "Lady Jell laughed."
 
     j"...Being his wife doesn't mean I have to pretend I don't know what he does when I'm not around. He thinks he's clever, but he's just hiding behind my family's crest!"
 
@@ -625,19 +628,27 @@ label hallway:
 
     j" Now everyone knows, and he has put shame on me, this family, UGH! How can I show myself in public now..."
 
-    "Silence once more as the respondant replies. then lady jell's reponded with a lowered tone."
+    "Silence once more as the respondant replies. then Lady Jell's reponded with a lowered tone."
 
     j" If he plans on doing just that, then I'll find a way to stop this nonsense. My family's honor will not fall due to his hands."
 
     hide sherlob
-    hide ladyjell
+    hide jell
     with dissolve
     "Sherlobster heard footsteps approaching from the other end of the hallwasy. He stepped behind a pillar before Lady Jell could see him."
 
     "Her footsteps faded, but Sherlobster remained where he was for a moment. It seems Lady Jell was talking to someone over the phone."
 
+    show sherlob
+    with dissolve
     "It's best to return to the banquent hall before anyone noticed him being gone for too long."
 
+    scene insidetheparty
+    pause
+    show sherlob at left
+    with dissolve
+    play music popshrill fadein 1.0
+    
     "Sherlobster made his way back into the banquet hall."
 
     "The crowd had thinned since he had left for some air. Some guest had already said their goodbyes, while others still lingered around the tables, finsihing their drinks and conversations."
@@ -646,46 +657,193 @@ label hallway:
 
     "They locked eyes and Gobius walked up to him holding two drinks."
 
-GOBIUS: "Ah, Detective, there you are! I couldn't find you anywhere."
+    show gobius
+    with dissolve
 
-Gobius stumbled towards Sherlobster, clearly drunk, and offered a wine glass towards him.
+    g"Ah, Detective, there you are! I couldn't find you anywhere."
 
-GOBIUS: "Care for a drink, my friend?"
+    "Gobius stumbled towards Sherlobster, clearly drunk, and offered a wine glass towards him."
 
-SHERLOBSTER: "I suppose another one won't hurt."
+    g"Care for a drink, my friend?"
 
-Sherlobster accepted the wine.
+    s"I suppose another one won't hurt."
 
-GOBIUS:" I hope you've been enjoying yourself tonight."
+    "Sherlobster accepted the wine."
 
-SHERLOBSTER:" I have, It's certainly been an interesting evening."
+    g" I hope you've been enjoying yourself tonight."
 
-GOBIUS:"Interesting, ey? I hope that's a good thing"
+    s" I have, It's certainly been an interesting evening."
 
-Gobius chuckled.
+    g"Interesting, ey? I hope that's a good thing."
 
-The two begin to talk, but the celebration seem to be ending, and guest begin to bid their dues.
+    "Gobius chuckled."
 
-GUEST: "Goodnight, Sir Gobius."
-ANOTHERGUEST: "Happy anniversary, thank you for having us."
+    "The two begin to talk, but the celebration seem to be ending, and guest begin to bid their dues."
+    
+    "GUEST " "Goodnight, Sir Gobius."
 
-GOBIUS: "ah, thank you for attending, CCs will see you out."
+    "ANOTHER GUEST " "Happy anniversary, thank you for having us."
+    
+    g"Ah, thank you for attending, CCs will see you out."
 
-SHERLOBSTER: "Well, I suppose I should be heading out as well. Thank you for having me tonight."
+    s"Well, I suppose I should be heading out as well. Thank you for having me tonight."
 
-Sherlobster bowed his head goodbye, but gobius seem to have something to say.
+    "Sherlobster bowed his head goodbye, but Gobius seem to have something to say."
 
-GOBIUS:" Wait! The wine, I've forgotten about the wine!"
+    g" Wait! The wine, I've forgotten about the wine!"
 
-SHERLOBSTER: "The wine?"
+    s"The wine?"
 
-GOBIUS: "Yes! The red wine we spoked about, it'd be a shame to not serve it to you after all this time. I have even troubled CCs to getting that wine just for this occasion."
+    g"Yes! The red wine we spoked about, it'd be a shame to not serve it to you after all this time. I have even troubled CCs to getting that wine just for this occasion."
 
-SHERLOBSTER: "I'm afraid I must decline, it's far too late, and I must head back to the office."
+    s"I'm afraid I must decline, it's far too late, and I must head back to the office."
 
-GOBIUS: "ah... I... I understand. You're busy with your cases."
+    g"Ah... I... I understand. You're busy with your cases."
 
-Gobius seems down, it seems he was looking foward to sharing another drink with the detective. 
+    "Gobius seems down, it seems he was looking foward to sharing another drink with the detective."
+
+    menu:
+        "Stay for the wine.":
+            jump mudertime
+        "Leave":
+            jump endparty
+
+label mudertime:
+    s"It is getting rather late, and I did have more than a couple to drink..."
+    
+    g"Nonesense! You shouldn't be driving in a state like this. There's a guest room right next door to my office. We don't have to bother anyone else if that's what you're fearing Detective!"
+
+    s"I-"
+
+    g"Don't worry, my dear friend. The wine is kepted in my office, no one will be distrubed."
+
+    "Before Sherlobster could object, Sir Gobius led him to his office. "
+
+    scene officemurder
+    with dissolve 
+    pause
+    show sherlob at left
+    show gobius at right
+    with dissolve
+    play music Explore fadein 1.0
+
+    "Sir Gobius was overjoyed to say the least. He ushered Sherlobster towards the sofa before hurrying over to his liquor cabinet. "
+
+    "Sherlobster looked the room."
+
+    "His office was exravagent. Famous painting lined against each wall, while Sir Gobius' desk looked to be custom made with intricate detailed carved into the frame. Even the floor was covered by an expensive carpet that stretched across most of the room.  "
+
+    s"Your office is quite lavish."
+
+    g"Yes, I'm glad you noticed! I spent hours with the contractor making sure it had that effect."
+
+    "Gobius retrieved a bottle from the cabinet and placed it on the table along with two wine glasses on the table. He then sat across from sherlobster on the opposite sofa. "
+
+    g" This is the one, the very bottle i told you about. It has a wonderfully smooth flavor, with a delicate, rich, lingering sweet finish. I think you'll find it absolutely delightful, I'm sure of it."
+
+    "Sherlobster examined the bottle as Sir Gobius poured them each a glass. "
+
+    "Gobius handed him the glass and they both took a sip of the wine."
+
+    "It was just as Sir Gobius described. The wine was delightfully smooth and rich, with a subtle sweet taste that lingered on the tongue. It was unlike any wine Sherlobster has ever tasted. "
+
+    s"You weren't wrong, this wine is delightful!"
+
+    "They continued their conversation from before, but as the night continued,  it was evident that Sherlobster's exhaustion began to catch up with him."
+
+    "Eventually, Gobius took Sherlobster to the guest room."
+
+    scene room
+    with dissolve 
+    pause
+    show gobius at right
+    show sherlob at left
+    with dissolve
+
+    g"Get some rest, Detective. I'm sure you'll feel much better in the morning."
+
+    s"Thank you, Sir Gobius. Goodnight."
+
+    hide gobius
+
+    "Sherlobster settled into bed, barely keeping his eyes open."
+
+    "Just as he was about to fall asleep, a piercing scream was heard."
+
+    "???" "{cps=100}{shader=jitter}AHHHHHHHHHHHHHHHHH{/shader}{/cps}{nw}"
+    show sherlob at left
+    with hpunch
+    play music Jelly
+
+    "Sherlobster's eyes shot open."
+
+    hide sherlob
+    show sherlob 
+    with dissolve
+    "He jumps out of bed and rushed towards the sound."
+    
+
+    scene hallway
+    with dissolve
+    pause
+    show sherlob at left
+    with dissolve
+
+    "The scream had come from Sir Gobius' office. "
+
+    show ccs at right
+    with dissolve
+
+    "Secretary CCs was standing inside the office, right by the door. He looked faint, his face pale with fear and horror."
+
+    s"CCs? What happen? What's wrong-"
+
+    "CCs could barely speak, he looked shocked to see the detective."
+
+    "Sherlobster took a look inside."
+
+    "His eyes widened."
+
+    scene dead 
+    with dissolve
+    pause
+
+    "Sir Gobius was lying motionless on the couch, bleeding heavily. Sherlobster rushed to Sir Gobius' side and assessed the situtation immmediately. "
+
+    "There was no use."
+
+    "Sir Gobius was dead."
+
+    scene black 
+    with dissolve
+    pause
+    centered "THE END of CHAPTER 1"
+    centered "MORE TO COME"
+
+    return
+
+
+label endparty:
+    g"Goodnight then, I'll send the wine to your office, Sherlobster. A thank you gift for attending, I suppose."
+
+    s"Goodnight, Sir Gobius. I wish for your good health, and your company's continue success."
+
+    "Sherlobster leaves for the night and drives back to the office. "
+
+    "But it seems Sherlobster forgot something crucial:"
+
+    scene black 
+    with dissolve
+    pause
+    play music SherlobTheme
+
+    centered "Driving."
+    centered "Under."
+    centered "Influence. "
+
+    centered "ENDING: DUI (wait aren't you a cop?)"
+    return
+
 
 
 
