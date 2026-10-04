@@ -308,6 +308,8 @@ screen navigation():
 
             #textbutton _("Play") action Start()
 
+            
+            textbutton "Art Gallery" action ShowMenu("music_room")
             textbutton "Music Room" action ShowMenu("music_room")
 
 
@@ -329,7 +331,7 @@ screen navigation():
 
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("Credits") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
@@ -582,7 +584,8 @@ screen about():
 
 style about_label is gui_label
 style about_label_text is gui_label_text
-style about_text is gui_text
+style about_text is gui_text:
+    font "SpecialEliteRegular.ttf"
 
 style about_label_text:
     size gui.label_text_size

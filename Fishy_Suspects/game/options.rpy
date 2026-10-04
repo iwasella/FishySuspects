@@ -29,7 +29,8 @@ define config.version = "1.0"
 ## Text that is placed on the game's about screen. Place the text between the
 ## triple-quotes, and leave a blank line between paragraphs.
 
-define gui.about = _p("""Created by: College Students \n\nLead Programmer: iwasella \n\nStoryboard & Game Narrative: KT \n\n Environmental, Character, & Concept Artist: JYD \n\nMusic: MARC
+define gui.about = _p("""
+Meet the Team:\n\n- Artist: Jaedy\n\n- Composer: MARC\n\n- Storyboard & Game Narrative: KT \n\n- Programmer & Project Manager: iwasella 
 """)
 
 
