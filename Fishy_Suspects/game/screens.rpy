@@ -290,6 +290,13 @@ style quick_button_text:
 screen navigation():
 
     hbox:
+        yalign 0.50
+        xalign 0.5
+        spacing 100
+        textbutton _("Play") action Start():
+            text_size 100
+
+    hbox:
         style_prefix "navigation"
 
         #xpos gui.navigation_xpos
@@ -299,18 +306,18 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Start") action Start()
+            #textbutton _("Play") action Start()
 
             textbutton "Music Room" action ShowMenu("music_room")
 
 
-        else:
+        #else:
             
-            textbutton _("History") action ShowMenu("history")
+            #textbutton _("History") action ShowMenu("history")
 
-            textbutton _("Save") action ShowMenu("save")
+            #textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
+        #textbutton _("Load") action ShowMenu("load")
 
         textbutton _("Preferences") action ShowMenu("preferences")
 
@@ -344,6 +351,7 @@ style navigation_button:
     properties gui.button_properties("navigation_button")
 
 style navigation_button_text:
+    #affect main menu screen ig
     properties gui.text_properties("navigation_button")
 
 
@@ -476,7 +484,8 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     transclude
 
-    use navigation
+    #this is commented out because use navigation makes the nav menu appear under
+    #use navigation
 
     textbutton _("Return"):
         style "return_button"
@@ -735,8 +744,10 @@ style slot_button_text:
 
 screen preferences():
 
+    #Keeping this here because it makes the return button work under prefereances
     tag menu
 
+    #Allows me to return to the menu
     use game_menu(_("Preferences"), scroll="viewport"):
 
         vbox:

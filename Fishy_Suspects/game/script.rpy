@@ -313,7 +313,7 @@ label partystart:
             jump table
         "Head toward the music.":
             jump music
-        "Take a break in the hallway" if tablevisited and musicheard:
+        "Take a break in the hallway." if tablevisited and musicheard:
             jump hallway
 
 #Conditionals so player visits everything before progressing
@@ -441,7 +441,7 @@ label tableinvestigation:
     menu:
         "Head toward the music." if musicheard == False:
             jump music
-        "Take a break in the hallway" if tablevisited and musicheard: 
+        "Take a break in the hallway." if tablevisited and musicheard: 
             jump hallway
     
 label music:
@@ -509,7 +509,7 @@ default relation = False
 
 label musicinvestigation:
     menu:
-        "Ask about himself" if selftalk ==False:
+        "Ask about him." if selftalk ==False:
             $ selftalk = True
             s"So, what kind of business do you own? Just out of curiosity."
             
@@ -581,7 +581,7 @@ label musicinvestigation:
     menu:
         "Head toward the table." if tablevisited == False:
             jump table
-        "Take a break in the hallway" if tablevisited and musicheard: 
+        "Take a break in the hallway." if tablevisited and musicheard: 
             jump hallway
 
 
@@ -705,7 +705,7 @@ label hallway:
     menu:
         "Stay for the wine.":
             jump mudertime
-        "Leave":
+        "Leave.":
             jump endparty
 
 label mudertime:
