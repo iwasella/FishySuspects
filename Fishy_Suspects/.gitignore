@@ -33,7 +33,3 @@
 .DS_Store
 Thumbs.db
 .vscode/
-
-# Ignore Ren'Py images and audio directories
-/game/images/
-/game/audio/
