@@ -32,18 +32,90 @@ image jell = im.FactorScale("jell.png", 0.65)
 image ccs = im.FactorScale("ccs.png", 0.65)
 image pf = im.FactorScale("pufferfish.png", 0.65,)
 
+#There is most definitely a better way to organize these images, but for now... Here it is.
+# ==============================================================================
+# PAGE 1 IMAGES & THUMBNAILS (2 Buttons)
+# ==============================================================================
 
-image A1 = "images/dead.png"
-image A2 = "images/dead.png"
-image A3 = "images/dead.png"
+# Button test_1 (Contains A1, A2, A3)
+image A1 = "gui/game_menu.png"
+image A2 = Transform("images/characters.png", size=(1920, 1080), fit="contain", yalign=0.5)
+image A3 = "images/your_image_a3.png"
+image thumb_1 = Transform("A1", size=(384, 216))
 
-image B1 = "images/dead.png"
-image B2 = "images/dead.png"
-image B3 = "images/dead.png"
+# Button test_2 (Contains A4)
+image A4 = Transform("images/characters.png", size=(1920, 1080), fit="contain")
+image thumb_2 = Transform("A4", size=(384, 216))
 
-image C1 = "images/dead.png"
-image C2 = "images/dead.png"
-image C3 = "images/dead.png"
+
+# ==============================================================================
+# PAGE 2 IMAGES & THUMBNAILS (6 Buttons)
+# ==============================================================================
+
+# Button test_3
+image B1 = Transform("images/IMG_4860.png", size=(1920, 1080), fit="contain")
+image thumb_3 = Transform("B1", size=(384, 216))
+
+# Button test_4
+image B2 = Transform("images/IMG_4861.png", size=(1920, 1080), fit="contain")
+image thumb_4 = Transform("B2", size=(384, 216))
+
+# Button test_5
+image B3 = Transform("images/IMG_4862.png", size=(1920, 1080), fit="contain")
+image thumb_5 = Transform("B3", size=(384, 216))
+
+# Button test_6
+image B4 = Transform("images/IMG_4863.png", size=(1920, 1080), fit="contain")
+image thumb_6 = Transform("B4", size=(384, 216))
+
+# Button test_7
+image B5 = Transform("images/IMG_4864.png", size=(1920, 1080), fit="contain")
+image thumb_7 = Transform("B5", size=(384, 216))
+
+# Button test_8
+image B6 = Transform("images/IMG_4865.png", size=(1920, 1080), fit="contain")
+image thumb_8 = Transform("B6", size=(384, 216))
+
+
+# ==============================================================================
+# PAGE 3 IMAGES & THUMBNAILS (9 Buttons)
+# ==============================================================================
+
+# Button test_9
+image C1 = Transform("images/theoffice.png", size=(1920, 1080), fit="contain")
+image thumb_9 = Transform("C1", size=(384, 216))
+
+# Button test_10
+image C2 = Transform("images/partystart.png", size=(1920, 1080), fit="contain")
+image thumb_10 = Transform("C2", size=(384, 216))
+
+# Button test_11
+image C3 = Transform("images/insidetheparty.png", size=(1920, 1080), fit="contain")
+image thumb_11 = Transform("C3", size=(384, 216))
+
+# Button test_12
+image C4 = Transform("images/orchestra.png", size=(1920, 1080), fit="contain")
+image thumb_12 = Transform("C4", size=(384, 216))
+
+# Button test_13
+image C5 = Transform("images/table.png", size=(1920, 1080), fit="contain")
+image thumb_13 = Transform("C5", size=(384, 216))
+
+# Button test_14
+image C6 = Transform("images/hallway.png", size=(1920, 1080), fit="contain")
+image thumb_14 = Transform("C6", size=(384, 216))
+
+# Button test_15
+image C7 = Transform("images/room.png", size=(1920, 1080), fit="contain")
+image thumb_15 = Transform("C7", size=(384, 216))
+
+# Button test_16
+image C8 = Transform("images/officemurder.png", size=(1920, 1080), fit="contain")
+image thumb_16 = Transform("C8", size=(384, 216))
+
+# Button test_17
+image C9 = Transform("images/dead.png", size=(1920, 1080), fit="contain")
+image thumb_17 = Transform("C9", size=(384, 216))
 
 label start:
 

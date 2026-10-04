@@ -302,10 +302,10 @@ screen navigation():
 
         if main_menu:
 
-            textbutton _("Fishy") action Start():
+            textbutton _("Fishy") action None:
                 text_size 130
                 
-            textbutton _("Suspects") action Start():
+            textbutton _("Suspects") action None:
                 text_size 130
 
 
