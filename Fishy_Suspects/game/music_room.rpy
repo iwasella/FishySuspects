@@ -41,7 +41,7 @@ init python:
     music_room.add(
         ## The title of the song. Used for alphabetization. Should probably
         ## be translatable.
-        name=_("Sherlobster Theme"),
+        name=_("The Fate of the Seven Seas Relies on a Pinboard and the Claw of Justice"),
         ## This should be the path to the song i.e. "audio/music/sugar_plum.ogg"
         path="audio/Sherlob.wav",
         ## The song artist. Optional; depends on how you want to set up
@@ -70,7 +70,7 @@ init python:
     )
 
     music_room.add(
-        name=_("Club Music"),
+        name=_("Blubbtastic!"),
         #artist="Red Robotix",
         path="audio/ClubMusic.mp3",
         unlock_condition="True",
@@ -80,45 +80,45 @@ init python:
     )
 
     music_room.add(
-        name=_("Jelly Fih"),
+        name=_("Ethereal Electricity Enchanting the Everlasting Epipelagic Zone"),
         path="audio/JellyFih.wav",
         unlock_condition="True",
 
     )
 
     music_room.add(
-        name=_("Main Menu Theme"),
+        name=_("Fishy Suspects"),
         path="audio/MainMenuTheme.wav",
         unlock_condition="True",
     
     )
 
     music_room.add(
-        name=_("Shrilly lil Pop"),
+        name=_("Shrilly Little Pop"),
         path="audio/ShrillyPop.wav",
         unlock_condition="True",
     )
 
     music_room.add(
-        name=_("The Exploring Fih"),
+        name=_("Curious Cambrians"),
         path="audio/Explore.wav",
         unlock_condition="True",
     )
 
     music_room.add(
-        name=_("Jolly Fih"),
+        name=_("Probably Us Finally Finishing each Righteous Fate I Seek Here (or P.U.F.F.E.R.F.I.S.H)"),
         path="audio/JollyFih.wav",
         unlock_condition="True",
     )
 
     music_room.add(
-        name=_("Gill-ty"),
+        name=_("Gillty as Charged"),
         path="audio/Gill-ty.wav",
         unlock_condition="True",
     )
 
     music_room.add(
-        name=_("Gobbers"),
+        name=_("Pondering Gobs from Beyond the Deep Sea"),
         path="audio/Gobbers.wav",
         unlock_condition="True",
     )
@@ -272,7 +272,7 @@ screen music_room(mr):
         xsize 850 left_margin 25 top_margin 25
         viewport:
             #remove mousewheel
-            #mousewheel True scrollbars "vertical" draggable True
+            mousewheel True scrollbars "vertical" draggable True
             has vbox
             label _("Track List") style "music_room_title"
             ## get_tracklist takes one argument, all_tracks. If all_tracks is
@@ -305,12 +305,14 @@ screen music_room(mr):
     ## is generally the actions on the buttons, and the music bar is special
     ## so you can click it to seek in the song.
     frame:
-        right_margin 45 background None
+        left_margin 10 right_margin 1 background None
         xalign 1.0 yalign 0.3
         has vbox
         if current_track:
             add current_track.art xalign 0.5 ysize 440 fit "contain"
-            text current_track.name
+            text current_track.name:
+                text_align 0.5
+                xmaximum 400 
             #text current_track.artist
             ## Include more fields if you like e.g.
             # text current_track.description

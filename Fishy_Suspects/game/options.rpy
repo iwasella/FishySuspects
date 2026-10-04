@@ -30,7 +30,7 @@ define config.version = "Demo"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-"Nice to meet ya'll!" - The Team\n\n- Character & Environment Art: Jaedy\n\n- Music Production: MARC\n\n- Game Narrative: KT \n\n- Programmer & Project Manager: iwasella 
+"Nice to meet ya'll!" - The Team\n\n- Character & Environmental Art: Jaedynnoodles\n\n- Music Production: Cookies n Cream\n\n- Story Writer: bennybearu \n\n- Programmer & Project Manager: iwasella 
 \n\nMusic Room Template: https://feniksdev.com/ \n\n Gallery Room Template: Discover with Mia
 """)
 

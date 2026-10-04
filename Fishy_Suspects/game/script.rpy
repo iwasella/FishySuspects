@@ -14,6 +14,9 @@ define audio.popshrill = "/audio/Shrillypop.wav"
 define audio.Explore = "/audio/Explore.wav"
 define audio.Jelly = "/audio/JellyFih.wav"
 define audio.Club = "/audio/ClubMusic.mp3"
+define audio.Guilty = "/audio/Gill-ty.wav"
+define audio.Jolly = "/audio/JollyFih.wav"
+define audio.Gobby = "/audio/Gobbers.wav"
 
 # character transformations
 transform slide_left:
@@ -153,9 +156,15 @@ label start:
 
     {i}Tap. Tap. Tap. Tap. Tap.{/i}
 
-    {i}{shader=jitter:1.0, 1.0}KNOCK. KNOCK. KNOCK{/shader}{/i}
+    Then there was a knock at the door.
     """
-    s"Come in"
+    play audio "audio/knock.mp3"
+
+    """
+
+    {i}{shader=jitter:1.0, 1.0}KNOCK. KNOCK. KNOCK.{/shader}{/i}
+    """
+    s"Come in."
 
     show sherlob at slide_left
     pause
@@ -163,7 +172,7 @@ label start:
     show comissioner at right
     with dissolve
 
-    "The door opened, revealing Commisioner Shrimp, head of the Seadon Police Department."
+    "The door opened, revealing Commisioner Shrimp, the head of the Seadon Police Department."
 
     c"Good morning, Holmes. I see you've been working overtime again."
 
@@ -176,7 +185,7 @@ label start:
     I'm not saying this as your superior, but as your friend.
     """
 
-    "Long before Shrimp became commissioner, and Holmes became a detective, the two had started at the Seadon Police Department together as rookies."
+    "Long before Shrimp became the commissioner, and Holmes became a detective, the two had started at the Seadon Police Department together as rookies."
 
     "Commissioner Shrimp reached into his coat and pulled out a sealed letter."
 
@@ -186,7 +195,7 @@ label start:
 
     c"They didn't say who it was from, but I trust that you must've got some fancy acquaintances during your travels."
 
-    "Commissioner Shrimp turned toward the door."
+    "Commissioner Shrimp turned towards the door."
 
     c"Anyways, I best be on my way. Lunch is calling, and I'm straving. Let me know what that letter says, 'kay?"
 
@@ -212,7 +221,7 @@ label start:
     
     {i}There will be appetizers and drinks suited to your taste.
 
-    {i}I've also purchased the {color=#f00}red wine{/color} you recommended, and I kept an extra bottle in the cellar just for you. It would be such a shame to not catch up after all this time. 
+    {i}I've also purchased the {color=#f00}red wine{/color} I spoke of, and I kept an extra bottle in my office just for you. It would be such a shame to not catch up after all this time. 
 
     {i}Wouldn't you humor me and come have a drink with this old friend?
 
@@ -280,25 +289,27 @@ label partystart:
     show ccs at right
     with dissolve
     """
-    When Sherlobster arrived at the party, he was greeted by the entrance by Gob Corp's secretary, Secretary CCs.
+    When Sherlobster arrived at the party, he was greeted at the entrance by Gob Corp's secretary, Secretary CCs.
 
-    Sherlobs have known CCs since their meeting three years ago. Although CCs officially served as Sir Gobius' secretary, in practice, he was more of a bulter. 
+    He was nicknamed CC because Cookiecutter Shark was too long for Sir Gobius.
 
-    CCs handled almost everything from greeting guests to making sure Sir Gobius' every need was taken care of
+    Sherlobster has known CCs since their first meeting three years ago. Although CCs officially served as Sir Gobius' secretary, in practice, he was more of a butler. 
+
+    CCs handled almost everything from greeting guests to making sure Sir Gobius' every need was taken care of.
 
     """
 
-    cc"Detective Holmes, It's been a while. I'm pleased to see you could make it, and I'm sure Sir Gobius would be delighted as well."
+    cc"Detective Holmes, It's been a while. I'm pleased upon your arrival, and I'm sure Sir Gobius would be delighted as well."
 
-    s"Good to see you too, CCs. Hope your daughter's doing well with her health, I've heard the medicine for her treatment have gone to the testing phase. Hopefully it'll be out by the end of this year."
+    s"Good to see you too, CCs. Hope your daughter's doing well with her health, I've heard the medicine for her treatment have gone to the testing phase. Hopefully, it'll be out by the end of this year."
 
-    "CCs gave Sherlobster a strange look. It was like a half-smile almost."
+    "CCs gave Sherlobster a strange look. It was like a half-smile, almost."
 
-    cc"Yes, I've heard about it. My daughter's been doing well too. The doctor's been saying that she's gotten better recently."
+    cc"Yes... I've heard about it. My daughter's been doing well too. The doctor's been saying that she's gotten better recently."
 
     s"Ah. I see."
 
-    """After a brief exchange, Sherlob thanked CCs and made his way towards the main hall."""
+    """After a brief exchange, Sherlobster thanked CCs and made his way towards the main hall."""
     
     scene insidetheparty
     show jell at left
@@ -322,7 +333,7 @@ label partystart:
     "ANOTHER OTHER GUEST " "Poor Lady Jell.."
     "SOMEOTHER GUEST" "...they're both crazy..."
 
-    "The argument grew louder until." 
+    "The argument grew louder until..." 
     
     #there's a glitch here where character temporarily stops- I'll just remove it
     show jell at left
@@ -350,16 +361,16 @@ label partystart:
 
     """
 
-    With a slow stern gaze, SIr Gobius looked across the room, silencing the remaining whispers. 
+    With a slow stern gaze, Sir Gobius looked across the room, silencing the remaining whispers. 
 
-    The music resumed, and the guest slowly returned to their conversations, pretending as if nothing had happened. 
+    The music resumed, and the guess slowly returned to their conversations, pretending as if nothing had happened. 
     """
 
     show sherlob with dissolve
 
     """
 
-    Sherlobster's eyes followed Lady Jell as she disappeared through the doors. Before He can do anything, a familiar voice called out to him. 
+    Sherlobster's eyes followed Lady Jell as she disappeared through the doors. Before he could do anything, a familiar voice called out to him. 
     """
 
     g"Holmes!"
@@ -371,7 +382,7 @@ label partystart:
 
     "Sir Gobius approached him with a smile, though there was still a hint of tension in his face."
 
-    g"I'm so glad you actually came. I must admit, I wasn't certain you'd aaccept my invitation."
+    g"You actually came! I must admit, I wasn't certain you'd accept my invitation."
 
     s"Well, you mentioned that {b}bottle of wine{/b}."
 
@@ -381,7 +392,7 @@ label partystart:
 
     g"Ah, yes... That. Nothing for you to concern yourself with, Holmes. Just a little disagreement between husband and wife."
 
-    "Sherlobster can still he was forcing a smile"
+    "Sherlobster could still see he was forcing a smile."
 
     g"Besides, tonight is a celebration! I wouldn't want something like this to ruin it."
 
@@ -397,9 +408,9 @@ label partystart:
     menu:
         "Sherlobster watched him leave. Now that Sherlobster has time to think, what should he do first?"
 
-        "Head toward the appetizer table.":
+        "Head towards the appetizer table.":
             jump table
-        "Head toward the music.":
+        "Head towards the music.":
             jump music
         "Take a break in the hallway." if tablevisited and musicheard:
             jump hallway
@@ -418,7 +429,7 @@ label table:
     play music Explore
 
     """
-    Sherlob stomach growled as he head towards the appetizer table. 
+    Sherlobster's stomach growled as he headed towards the appetizer table. 
 
     He marveled at the assortment of entrees and appetizers available. 
         
@@ -434,9 +445,9 @@ label table:
     
     cc"Need assistance deciding, Detective?"
 
-    s"Oh, I almost didn't see you there CCs. Well, there's so many choices that I don't know how to start."
+    s"Oh, I almost didn't see you there CCs. Well, there's so many choices that I don't know where to start."
 
-    cc "Then might i recommend the plankton? It's one of Sir Gobius' favorites."
+    cc "Then might I recommend the plankton? It's one of Sir Gobius' favorites."
 
     s "Plankton, huh? Can't say I've had it prepared quite like this before."
 
@@ -444,7 +455,7 @@ label table:
 
     "Sherlobster helped himself to a small serving of the recommended dish. It was indeed delicious."
 
-    s"This is delicious! I've never tasted plankton like this, please, convey my apprication to the chef, if you will, CCs."
+    s"This is delicious! I've never tasted plankton like this, please, convey my appreciation to the chef, if you will, CCs."
 
     cc"Of course, Detective."
     jump tableinvestigation
@@ -463,27 +474,27 @@ label tableinvestigation:
             
             cc"""That's certainly true. The company means a lot to Sir Gobius, it's only fitting that he put the same amount of effort into celebrating its anniversary.
 
-            Even the order of each track the orchestra plays had to be decided beforehand. Sir Gobius wanted to ensue the best atmosphere for his guests."""
+            Even the order of each track the orchestra plays had to be decided beforehand. Sir Gobius wanted to ensure the best atmosphere for his guests."""
             
             s"Sounds like he kept you busy."
             
             cc"He certainly does, but once you get used to it, you learn to keep up with his demands."
             
-            s"He's always been this particular?"
+            s"Has he always been this particular?"
             
-            cc"{cps=100}{shader=jitter}That's one way to put it.{/shader}{/cps}{nw}" 
+            cc"{cps=50}{shader=jitter}That's one way to put it.{/shader}{/cps}{nw}" 
             
             "CCs paused, realizing what he had just said."
             
-            cc"""Ah, Ahem. Sir Gobius... He's not particular, he just have high expectations for things. Even simple things.
+            cc"""Ah, Ahem. Sir Gobius... He's not {i}particular{/i}, he just has high expectations for things. Even... simple things.
             
-            And as his bulter, I have to see that his wishes are carried out."""
+            And as his butler, I have to see that his wishes are carried out."""
             
-            s"Sounds Exhausting."
+            s"Sounds exhausting."
             
             cc"""I don't mind, it's my job to make sure everything is exactly the way {i}he{/i} wants.
             
-            {i}Sigh{/i}, forgive me, Detective. I hope I don't sound like I'm complaining. Sir Gobius is a wonder master, and I'm lucky to be serving him."""
+            {i}Sigh{/i}, forgive me, Detective. I hope I don't sound like I'm complaining. Sir Gobius is a wonderful master, and I'm lucky to be serving him."""
 
             jump tableinvestigation
         "Ask about his daugther." if kidtalk == False:
@@ -492,23 +503,23 @@ label tableinvestigation:
             
             "CCs' expression softened at the thought of his daughter, his eyes looked a little sad." 
             
-            cc"She's doing great, and her health's getting better. I just wish I had more time to spend with her."
+            cc"She's... She's doing great, and her health's getting better. I just wish I had more time to spend with her."
 
             s"I see, I'm sure Sir Gobius wouldn't mind giving you a day off. You've been by his side for nearly ten years!"
 
             cc"""Haha, yes I have. But the company's been keep Sir Gobius busy, there's simply no time for a day off.
 
-            Whenever I think I've finsihed one task, there's always another waiting for me.
+            Whenever I think I've finished one task, there's always another waiting for me.
             
             """
             
             s"After ten years, you'd think he'd give you a little breathing room."
 
-            cc"{cps=100}{shader=jitter}You'd think so, wouldn't you?{/shader}{/cps}{nw}"
+            cc"{cps=50}{shader=jitter}You'd think so, wouldn't you?{/shader}{/cps}{nw}"
 
             "CCs quickly cleared his throat and straighten himself."
 
-            c" But that's simply how Sir Gobius is. He expects everthing to be done his way, and I... I suppose I've gotten used to it."
+            cc"But that's simply how Sir Gobius is. He expects everthing to be done his way, and I... I suppose I've gotten used to it."
 
             s"Still, your daughter probably wishes she could see you more."
 
@@ -516,18 +527,18 @@ label tableinvestigation:
 
             cc"She probably did."
 
-            s"{i}Did?{/i}"
+            s"{i}(Did?){/i}"
 
             cc"I promised her I'd ask Sir Gobius for a day off. Well, maybe once things settled down, I'm sure he'll be more open to offering it to me."
             jump tableinvestigation
 
-    cc"Oh, would you look at the time! I've been standing idle for too long. Now, if you'll excuse me, I should make sure our other guests are being properly taken care off"
+    cc"Oh, would you look at the time! I've been standing idle for too long. Now, if you'll excuse me, I should make sure our other guests are being properly taken care off."
 
-    s" Of course."
+    s"Of course, thank you CCs."
 
 
     menu:
-        "Head toward the music." if musicheard == False:
+        "Head towards the music." if musicheard == False:
             jump music
         "Take a break in the hallway." if tablevisited and musicheard: 
             jump hallway
@@ -542,7 +553,7 @@ label music:
     """
     Sherlobster wandered deeper into the ballroom, where the sound of the orchestra could be appriecated best.
 
-    Guest danced and chatted along the music, accompanied by the sound of clinking glasses from those who drunk a little too much to be dancing. 
+    Guests danced and chatted along the music, accompanied by the sound of clinking glasses from those who drunk a little too much to be dancing. 
 
     Turning around to leave the busy scene, Sherlobster bumped into another guest. He stumbled backward, almost falling, before a large fin caught him and held him steady.
     """
@@ -556,7 +567,7 @@ label music:
 
     pf"Ha! No harm done, good sir."
 
-    "Standing in front of Sherlobster was a rather large pufferfish with a wide grin across his face. He helped Sherlobster regain his balance before giving him a friendly pat on the shoulder."
+    "Standing in front of Sherlobster was a rather large pufferfish with a wide grin plastered across his face. He helped Sherlobster regain his balance before giving him a friendly pat on the shoulder."
 
     pf"You alright there?"
 
@@ -568,13 +579,13 @@ label music:
 
     "Sherlobster couldn't help but smile."
 
-    s"{i}He seems like a fun guy to be around.{/i}"
+    s"{i}(He seems like a fun guy to be around.){/i}"
 
     s"I don't believe we've met before."
 
     "Sherlobster extends a claw as greeting."
 
-    s"Sherlobster Holmes"
+    s"Sherlobster Holmes."
 
     "Duke Pufferish took his claw and gave it a firm shake."
 
@@ -613,15 +624,15 @@ label musicinvestigation:
 
             "Duke Pufferish gave a small laugh and scrached the side of his head with a fin."
 
-            pf" When Gobius first started expanding Gob Corp, he came to me and offered a deal... Well, I couldn't turn it down after that! So, I helped him out with shipping routes and connections."
+            pf"When Gobius first started expanding Gob Corp, he came to me and offered a deal... Well, I couldn't turn it down after that! So, I helped him out with shipping routes and connections."
 
             s" I see."
 
-            pf"He was able to grow his company exponentially and eventually Gob Corp grew bigger and bigger and even surpasssed my family's business."
+            pf"He was able to grow his company exponentially and eventually, Gob Corp grew bigger and bigger and even surpasssed my family's business."
 
             "Duke pufferish's smiled faded and muttered something under his breath"
 
-            pf"{cps=100}{shader=jitter}..If only he didnt hold that against me.{/shader}{/cps}{nw}"
+            pf"{cps=50}{shader=jitter}..If only he didnt hold that against me.{/shader}{/cps}{nw}"
 
             s" What did you say?"
 
@@ -631,28 +642,28 @@ label musicinvestigation:
 
             "He coughed to cover up his stutter."
 
-            pf"Im just so glad I was able to contribute to Gob Corp's success, this company is certainly something extraordinary, just like it's owner."
+            pf"I'm just so glad I was able to contribute to Gob Corp's success, this company is certainly something extraordinary, just like it's owner."
 
-            s"How one man managed to achieve that much success... He must have some sort of secret talent for business."
+            s"How one man managed to achieve that much success. Hah, he must have some sort of secret talent for business."
 
-            pf"Ha.. maybe, but Gobius has always been good at keeping his cards close to his chest"
+            pf"Ha.. maybe, but Gobius has always been good at keeping his cards close to his chest."
             jump musicinvestigation
         "Ask about his relationship with Sir Gobius." if relation ==False:
             $ relation = True
 
             "Duke Pufferish puffed his chest out proudly."
 
-            pf"We've been through quite a lot together. The good and bad moments."
+            pf"We've been through quite a lot together, the good and bad."
 
             s"Business partners, huh. I take it you guys must be close after all these years working together? Reminds me of my colleague and I."
 
             "Duke Pufferish's grin remained, though it seems to twitch for a second."
 
-            pf"I'd say so! Gobius and I have a long {i}history{/i} together. He's... certainly a memorable fish."
+            pf"I'd... say so! Gobius and I have a long {i}history{/i} together. He's... certainly a memorable fish."
 
             "Sherlobster raised a brow at 'memorable'."
 
-            pf"Ha! You know what I mean. The main certainly knows how to get what he wants."
+            pf"Ha! You know what I mean. The man certainly knows how to get what he wants."
 
             "Duke Pufferish laughed and gave Sherlobster another friendly pat on the shoulder."
 
@@ -661,13 +672,13 @@ label musicinvestigation:
             jump musicinvestigation
 
     
-    s"Well, I wont bother you any longer, Duke Pufferish."
+    s"Well, I won't bother you any longer, Duke Pufferfish."
 
     pf"Oh no, you did not bother me at all Detective, not at all."
 
 
     menu:
-        "Head toward the table." if tablevisited == False:
+        "Head towards the table." if tablevisited == False:
             jump table
         "Take a break in the hallway." if tablevisited and musicheard: 
             jump hallway
@@ -675,17 +686,17 @@ label musicinvestigation:
 
 
 label hallway:
-    play music SherlobTheme
+    play music Jolly volume 0.75
     scene hallway
     pause
     show sherlob at left
     with dissolve 
 
-    "Sherlobster stepped out the ballroom and into the quiet corridor. Once the door closes behind him, he pressed his back against the wall. Muffled music and chatter can still be heard but muted enough to give him brain a break."
+    "Sherlobster stepped out the ballroom and into the quiet corridor. Once the door closed behind him, he pressed his back against the wall. Muffled music and chatter can still be heard, but muted enough to give his brain a break."
 
-    s"Rich arostrocrate parties are definitely not my thing."
+    s"Rich aristocratic parties are definitely not my thing."
 
-    "He took a slow, dragging breath and closed his eyes to for a break. Before Sherlobster can even open his eyes, he heard voices coming from around the corner, farther down the corridor."
+    "He took a slow, dragging breath and closed his eyes for a second. Before Sherlobster can even open his eyes, he heard voices coming from around the corner, farther down the corridor."
 
     "???" "After everything I've had to put up with, you'd think he'd at least have the decency to be discreet."
 
@@ -702,7 +713,7 @@ label hallway:
 
     "Lady Jell scoffed."
 
-    j"Clearly there's no way this man had any influence other than the dirt he found while digging around where he shouldnt."
+    j"Clearly there's no way this man had any influence- other than the dirt he found while digging around where he shouldn't."
 
     "A pause, it seems the other person responded."
 
@@ -712,20 +723,20 @@ label hallway:
 
     j"...Being his wife doesn't mean I have to pretend I don't know what he does when I'm not around. He thinks he's clever, but he's just hiding behind my family's crest!"
 
-    "Her breathing was clearly louder and she was clearly on the verge of tears."
+    "Her breathing was clearly louder, and she wason the verge of tears."
 
-    j" Now everyone knows, and he has put shame on me, this family, UGH! How can I show myself in public now..."
+    j"Now everyone knows, and he has put shame on this family, this company, and me. UGH! How can I show myself in public now..."
 
-    "Silence once more as the respondant replies. then Lady Jell's reponded with a lowered tone."
+    "Silence once more as the respondant replies. Then Lady Jell reponded with a lowered tone."
 
-    j" If he plans on doing just that, then I'll find a way to stop this nonsense. My family's honor will not fall due to his hands."
+    j"If he plans on doing just that, then I'll find a way to stop this nonsense. My family's honor will not fall due to his hands."
 
     hide sherlob
     hide jell
     with dissolve
-    "Sherlobster heard footsteps approaching from the other end of the hallwasy. He stepped behind a pillar before Lady Jell could see him."
+    "Sherlobster heard swooshing from the other end of the hallway. He stepped behind a pillar before Lady Jell could see him."
 
-    "Her footsteps faded, but Sherlobster remained where he was for a moment. It seems Lady Jell was talking to someone over the phone."
+    "As Lady Jell disappeared, the wooshing faded, but Sherlobster remained where he was for a moment. It seems Lady Jell was talking to someone over the phone."
 
     show sherlob
     with dissolve
@@ -735,15 +746,15 @@ label hallway:
     pause
     show sherlob at left
     with dissolve
-    play music popshrill fadein 1.0
+    play music Gobby fadein 1.0
     
     "Sherlobster made his way back into the banquet hall."
 
-    "The crowd had thinned since he had left for some air. Some guest had already said their goodbyes, while others still lingered around the tables, finsihing their drinks and conversations."
+    "The crowd had thinned since he had left for some air. Some guest had already said their goodbyes, while others still lingered around the tables, finishing their drinks and conversations."
 
-    "Sherlobster loooked around until he spotted Sir Gobius standing neawr the drinks table. He seems to have freshen himself up."
+    "Sherlobster loooked around until he spotted Sir Gobius standing near the drinks table. He seems to have freshen himself up."
 
-    "They locked eyes and Gobius walked up to him holding two drinks."
+    "They locked eyes, and Gobius walked up to him holding two drinks."
 
     show gobius
     with dissolve
@@ -766,7 +777,7 @@ label hallway:
 
     "Gobius chuckled."
 
-    "The two begin to talk, but the celebration seem to be ending, and guest begin to bid their dues."
+    "The two began to talk, but the celebration seemed to be ending, and guests began to bid their dues."
     
     "GUEST " "Goodnight, Sir Gobius."
 
@@ -788,7 +799,7 @@ label hallway:
 
     g"Ah... I... I understand. You're busy with your cases."
 
-    "Gobius seems down, it seems he was looking foward to sharing another drink with the detective."
+    "Sir Gobius looks down. It seems he was looking foward to sharing another drink with the detective."
 
     menu:
         "Stay for the wine.":
@@ -799,11 +810,11 @@ label hallway:
 label mudertime:
     s"It is getting rather late, and I did have more than a couple to drink..."
     
-    g"Nonesense! You shouldn't be driving in a state like this. There's a guest room right next door to my office. We don't have to bother anyone else if that's what you're fearing Detective!"
+    g"Nonsense! You shouldn't be driving in a state like this. There's a guest room right next door to my office. We don't have to bother anyone else if that's what you're fearing, Detective!"
 
     s"I-"
 
-    g"Don't worry, my dear friend. The wine is kepted in my office, no one will be distrubed."
+    g"Don't worry, my dear friend. The wine is kepted in my office, no one will be disturbed."
 
     "Before Sherlobster could object, Sir Gobius led him to his office. "
 
@@ -817,21 +828,21 @@ label mudertime:
 
     "Sir Gobius was overjoyed to say the least. He ushered Sherlobster towards the sofa before hurrying over to his liquor cabinet. "
 
-    "Sherlobster looked the room."
+    "Sherlobster looked around the room."
 
-    "His office was exravagent. Famous painting lined against each wall, while Sir Gobius' desk looked to be custom made with intricate detailed carved into the frame. Even the floor was covered by an expensive carpet that stretched across most of the room.  "
+    "His office was extravagant. Famous painting lined against each wall, while Sir Gobius' desk looked to be custom made with intricate detailed carved into the frame. Even the floor was covered by an expensive carpet that stretched across most of the room.  "
 
     s"Your office is quite lavish."
 
     g"Yes, I'm glad you noticed! I spent hours with the contractor making sure it had that effect."
 
-    "Gobius retrieved a bottle from the cabinet and placed it on the table along with two wine glasses on the table. He then sat across from sherlobster on the opposite sofa. "
+    "Gobius retrieved a bottle from the cabinet and placed it on the table along with two wine glasses. He then sat across from sherlobster on the opposite sofa. "
 
-    g" This is the one, the very bottle i told you about. It has a wonderfully smooth flavor, with a delicate, rich, lingering sweet finish. I think you'll find it absolutely delightful, I'm sure of it."
+    g"This is the one, the very bottle I told you about. It has a wonderfully smooth flavor, with a delicate, rich, lingering sweet finish. I think you'll find it absolutely delightful, I'm sure of it."
 
     "Sherlobster examined the bottle as Sir Gobius poured them each a glass. "
 
-    "Gobius handed him the glass and they both took a sip of the wine."
+    "Gobius handed him the glass, and they both took a sip of the wine."
 
     "It was just as Sir Gobius described. The wine was delightfully smooth and rich, with a subtle sweet taste that lingered on the tongue. It was unlike any wine Sherlobster has ever tasted. "
 
@@ -839,7 +850,7 @@ label mudertime:
 
     "They continued their conversation from before, but as the night continued,  it was evident that Sherlobster's exhaustion began to catch up with him."
 
-    "Eventually, Gobius took Sherlobster to the guest room."
+    "Eventually, Sir Gobius took Sherlobster to the guest room."
 
     scene room
     with dissolve 
@@ -894,6 +905,7 @@ label mudertime:
 
     "His eyes widened."
 
+    play music Guilty
     scene dead 
     with dissolve
     pause
