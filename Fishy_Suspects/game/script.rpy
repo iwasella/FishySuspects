@@ -765,12 +765,14 @@ label mudertime:
     s"Thank you, Sir Gobius. Goodnight."
 
     hide gobius
+    with dissolve
 
     "Sherlobster settled into bed, barely keeping his eyes open."
 
     "Just as he was about to fall asleep, a piercing scream was heard."
 
-    "???" "{cps=100}{shader=jitter}AHHHHHHHHHHHHHHHHH{/shader}{/cps}{nw}"
+    "???" "{shader=jitter}AHHHHHHHHHHHHHHHHH{/shader}"
+    
     show sherlob at left
     with hpunch
     play music Jelly

@@ -289,28 +289,33 @@ style quick_button_text:
 
 screen navigation():
 
-    hbox:
-        yalign 0.50
-        xalign 0.5
-        spacing 100
-        textbutton _("Play") action Start():
-            text_size 100
 
-    hbox:
+
+
+    vbox:
         style_prefix "navigation"
 
         #xpos gui.navigation_xpos
-        yalign 0.75
-        xalign 0.5
-        spacing 100
+        yalign 0.1
+        xalign 0.03
+        spacing 5
 
         if main_menu:
 
-            #textbutton _("Play") action Start()
+            textbutton _("Fishy") action Start():
+                text_size 130
+                
+            textbutton _("Suspects") action Start():
+                text_size 130
 
+
+            #textbutton _("Play") action Start()
+            textbutton _("Play") action Start()
             
             textbutton "Art Gallery" action ShowMenu("music_room")
-            textbutton "Music Room" action ShowMenu("music_room")
+            #textbutton "Music Room" action ShowMenu("music_room")
+            textbutton _("Music Room") action ShowMenu("music_room", mr=music_room) 
+
 
 
         #else:
@@ -338,11 +343,7 @@ screen navigation():
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+    
 
 
 style navigation_button is gui_button
@@ -1155,47 +1156,7 @@ style help_label_text:
 ## Additional screens
 ################################################################################
 
-### MUSIC SCENE
-init python:
-
-    # Step 1. Create a MusicRoom instance.
-    mr = MusicRoom(fadeout=1.0)
-
-    # Step 2. Add music files.
-    mr.add("/audio/ClubMusic.mp3", always_unlocked=True)
-    mr.add("/audio/Explore.wav", always_unlocked=True)
-    mr.add("/audio/ShrillyPop.wav", always_unlocked=True)
-
-
-# Step 3. Create the music room screen.
-screen music_room:
-
-    tag menu
-
-    frame:
-        has vbox
-
-        # The buttons that play each track.
-        textbutton "Track 1" action mr.Play("/audio/ClubMusic.mp3")
-        textbutton "Track 2" action mr.Play("/audio/Explore.wav")
-        textbutton "Track 3" action mr.Play("/audio/ShrillyPop.wav")
-
-        null height 40
-
-        # Buttons that let us advance tracks.
-        textbutton "Next" action mr.Next()
-        textbutton "Previous" action mr.Previous()
-
-        null height 40
-
-        # The button that lets the user exit the music room.
-        textbutton "Main Menu" action ShowMenu("main_menu")
-
-    # Start the music playing on entry to the music room.
-    on "replace" action mr.Play()
-
-    # Restore the main menu music upon leaving.
-    on "replaced" action Play("music", "/audio/MainMenuTheme.wav")
+## Music Screen
 
 ## Confirm screen ##############################################################
 ##

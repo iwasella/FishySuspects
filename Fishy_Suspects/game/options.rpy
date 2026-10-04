@@ -30,7 +30,7 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
-Meet the Team:\n\n- Artist: Jaedy\n\n- Composer: MARC\n\n- Storyboard & Game Narrative: KT \n\n- Programmer & Project Manager: iwasella 
+Meet the Team:\n\n- Artist: Jaedy\n\n- Composer: MARC\n\n- Storyboard & Game Narrative: KT \n\n- Programmer & Project Manager: iwasella \n\nMusic Room:https://feniksdev.com/
 """)
 
 
