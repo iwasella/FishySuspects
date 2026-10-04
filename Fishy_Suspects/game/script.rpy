@@ -33,7 +33,17 @@ image ccs = im.FactorScale("ccs.png", 0.65)
 image pf = im.FactorScale("pufferfish.png", 0.65,)
 
 
+image A1 = "images/dead.png"
+image A2 = "images/dead.png"
+image A3 = "images/dead.png"
 
+image B1 = "images/dead.png"
+image B2 = "images/dead.png"
+image B3 = "images/dead.png"
+
+image C1 = "images/dead.png"
+image C2 = "images/dead.png"
+image C3 = "images/dead.png"
 
 label start:
 

@@ -312,7 +312,7 @@ screen navigation():
             #textbutton _("Play") action Start()
             textbutton _("Play") action Start()
             
-            textbutton "Art Gallery" action ShowMenu("music_room")
+            textbutton "Art Gallery" action ShowMenu("gallery")
             #textbutton "Music Room" action ShowMenu("music_room")
             textbutton _("Music Room") action ShowMenu("music_room", mr=music_room) 
 
